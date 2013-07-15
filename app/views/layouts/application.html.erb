@@ -8,6 +8,15 @@
 </head>
 <body>
 
+<div class="navbar">
+  <ul class="nav">
+    <li><%= link_to 'Home', root_path %></li>
+    <li>  <%= link_to 'DJs', users_path %></li>
+    <li><%= link_to 'Tracks', music_tracks_path %></li>
+    <li><%= link_to 'Genres', genres_path %></li>
+  </ul>
+</div>
+
 <%= yield %>
 
 </body>
