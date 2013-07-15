@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  published_date: 2013-07-15
+  description: MyText
+  author_id: 1
+  track_id: 1
+
+two:
+  published_date: 2013-07-15
+  description: MyText
+  author_id: 1
+  track_id: 1
