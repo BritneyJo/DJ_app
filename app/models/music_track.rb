@@ -8,4 +8,5 @@ class MusicTrack < ActiveRecord::Base
   validates :release_date, presence: :true
   validates :track_file, presence: :true
 
+  mount_uploader :track_file, TrackUploader
 end

@@ -12,6 +12,7 @@ class UsersController < ApplicationController
 
   def new
     @user = User.new
+
   end
 
   def edit
@@ -26,7 +27,9 @@ class UsersController < ApplicationController
 
   def create
     @user = User.new(params[:user])
+    @user.role = 'dj'
     @user.save
+    session[:user_id] = @user.id
     redirect_to @user
   end
 

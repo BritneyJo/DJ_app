@@ -16,6 +16,8 @@
       <li>  <%= link_to 'DJs', users_path %></li>
       <li><%= link_to 'Tracks', music_tracks_path %></li>
       <li><%= link_to 'Genres', genres_path %></li>
+      </ul>
+    <ul class="nav pull-right">
       <li><% if current_user %>
         <%= link_to 'Log Out', logout_path %>
         <% end %></li>
