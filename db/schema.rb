@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130715110526) do
+ActiveRecord::Schema.define(:version => 20130716085258) do
 
   create_table "comments", :force => true do |t|
     t.date     "published_date"
@@ -52,6 +52,7 @@ ActiveRecord::Schema.define(:version => 20130715110526) do
     t.string   "avatar_image"
     t.datetime "created_at",      :null => false
     t.datetime "updated_at",      :null => false
+    t.string   "role"
   end
 
 end
