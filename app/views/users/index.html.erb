@@ -1,0 +1,10 @@
+<h2>DJ's</h2>
+
+<div>
+
+<% @users.each do |user| %>
+  <ul>
+    <li><%= link_to user.name, user %></li>
+  </ul>
+<% end %>
+</div>

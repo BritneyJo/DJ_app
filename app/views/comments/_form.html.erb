@@ -1,0 +1,15 @@
+<%= form_for [@music_track, @comment] do |f| %>
+
+
+
+
+<div class="field">
+  <%= f.label :description, 'Comment:' %>
+  <%= f.text_area :description, :autofocus => true %>
+</div>
+
+<div class="actions">
+  <%= f.submit %>
+</div>
+
+<% end %>

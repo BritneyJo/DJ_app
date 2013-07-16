@@ -1,0 +1,23 @@
+
+<ul>
+  <li>Track Title: <%= @music_track.name %></li>
+  <li>Release Date: <%= @music_track.release_date %></li>
+  <li>About: <%= @music_track.description %></li>
+  <li>DJ: <%= @music_track.user[:name] %></li>
+  <li>Genres:<%= @music_track.genres.map { |x| x.name }.to_sentence %> </li>
+</ul>
+<%= render partial: 'comments/form' if can? :create, @comment %>
+<ul class="track_comments">
+<% @music_track.comments.each do |comment| %>
+    <li>
+        <%if can? :destroy, comment %>
+          <%=link_to 'delete', music_track_comment_path(@music_track, comment.id), method: :delete, data: { confirm: 'Are you sure?' } %>
+        <% end %>
+          <%= comment.description %></li>
+<% end %>
+</ul>
+<% if can? :update, @music_track.user %>
+<%= link_to 'Edit Track', edit_music_track_path(@music_track) %> |
+<%= link_to 'Delete Track', @music_track, method: :delete, data: { confirm: 'Are you sure?' } %> |
+<% end %>
+<%= link_to 'All Tracks', music_track_path %>

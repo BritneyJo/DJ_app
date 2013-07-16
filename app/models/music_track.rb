@@ -4,4 +4,8 @@ class MusicTrack < ActiveRecord::Base
   belongs_to :user
   has_many :comments
 
+  validates :name, presence: true, uniqueness: true
+  validates :release_date, presence: :true
+  validates :track_file, presence: :true
+
 end

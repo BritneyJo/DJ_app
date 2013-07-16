@@ -18,7 +18,7 @@ u2 = User.create(name: 'Pretty Lights', location: 'Fort Collins, Colorado', bio:
 u3 = User.create(name: 'Bassnectar', location: 'Santa Cruz, California', bio: 'Bassnectar is 35 years old, and his zodiac is Aquarius.', email: 'bassnectar@dj.com', password: 'music', password_confirmation:'music', avatar_image: 'http://gypsysphere.files.wordpress.com/2011/02/bassnectar05.jpg?w=480&h=320', role:'dj')
 
 MusicTrack.destroy_all
-m1 = MusicTrack.create(name: 'Finally Moving', release_date: '2006-10-23', track_file: 'finallymoving.mp3', description: 'This song is popular amongst fans and is a favorite at live performances.', user_id: u1.id )
-m2 = MusicTrack.create(name:'Upside Down', release_date: '2011-08-02', track_file:'upsidedown.mp3', description:'This track is the first single on the Divergent Spectrum album.', user_id: u2.id)
+m1 = MusicTrack.create(name: 'Finally Moving', release_date: '2006-10-23', track_file: 'finallymoving.mp3', description: 'This song is popular amongst fans and is a favorite at live performances.', user_id: u2.id )
+m2 = MusicTrack.create(name:'Upside Down', release_date: '2011-08-02', track_file:'upsidedown.mp3', description:'This track is the first single on the Divergent Spectrum album.', user_id: u3.id)
 
 

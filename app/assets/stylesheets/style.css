@@ -1,0 +1,13 @@
+.track_comments{
+  list-style-type: none;
+  margin: 0;
+}
+
+.track_comments li{
+  background-color: silver;
+  margin: 10px 0;
+  padding: 10px;
+  border-radius: 7px;
+  border: black 1px solid;
+
+}

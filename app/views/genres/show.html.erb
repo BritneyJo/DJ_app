@@ -1,0 +1,11 @@
+<p>
+  <b>Genre:</b>
+  <%= @genre.name %>
+</p>
+
+<p>
+  <b>Tracks:</b><br>
+<% @genre.music_tracks.each do |music_track| %>
+<%= link_to music_track.name, music_track %><br>
+<% end %>
+</p>

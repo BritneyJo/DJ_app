@@ -1,0 +1,44 @@
+<%= form_for(@music_track) do |f| %>
+<% if @music_track.errors.any? %>
+<div id="error_explanation">
+  <h2><%= pluralize(@music_track.errors.count, "error") %> prohibited this track from being saved:</h2>
+  <ul>
+    <% @music_track.errors.full_messages.each do |msg| %>
+    <li><%= msg %></li>
+    <% end %>
+  </ul>
+</div>
+<% end %>
+
+<div class="field">
+  <%= f.label :name, 'Track Name:' %>
+  <%= f.text_field :name, :autofocus => true %>
+</div>
+
+<div class="field">
+  <%= f.label :release_date, 'Release Date:' %>
+  <%= f.date_select :release_date %>
+</div>
+
+<div class="field">
+  <%= f.label :description, 'Description:' %>
+  <%= f.text_area :description, size: "15x5" %>
+</div>
+
+<div >
+  <%= f.label :track_file, 'Music File:' %>
+  <%= f.file_field :track_file%>
+</div>
+
+<div >
+  <% Genre.order(:name).each do |genre| %><br>
+    <%= genre.name %>
+    <%= check_box_tag 'music_track[genre_ids][]', genre.id, genre.in?(@music_track.genres.to_a) %>
+  <% end %>
+</div>
+
+<div class="actions">
+  <%= f.submit %>
+</div>
+
+<% end %>
