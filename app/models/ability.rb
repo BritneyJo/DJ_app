@@ -8,7 +8,7 @@ class Ability
       can :create, Comment
       can :manage, MusicTrack
       can :destroy, Comment do |c|
-          (c.music_track.user.id == user.id if (c.music_track and c.music_track.user))# || c.user.id == user.id
+          (c.music_track.user.id == user.id if (c.music_track and c.music_track.user)) || c.user.id == user.id
       end
       can :manage, User do |u|
         u.id == user.id

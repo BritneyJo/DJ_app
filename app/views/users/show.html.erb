@@ -4,8 +4,10 @@
   <li>Location: <%= @user.location %></li>
   <li>Bio: <%= @user.bio %></li>
   <li><%= image_tag @user.avatar_image %></li>
-  <li>Tracks: <% @user.music_tracks.each do |music_track| %>
-<%= link_to music_track.name, music_track %><% end %></li>
+  <li>Tracks: <br>
+    <% @user.music_tracks.each do |music_track| %>
+    <%= link_to music_track.name, music_track %><br>
+    <% end %></li>
 </ul>
 <% if can? :update, @user and current_user.role == 'dj' %>
 <%= link_to 'Edit Profile', edit_user_path(@user) %> |
