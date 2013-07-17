@@ -1,5 +1,5 @@
 class MusicTracksController < ApplicationController
-
+  load_and_authorize_resource
   def index
     @music_tracks = MusicTrack.order('name ASC')
   end
@@ -16,8 +16,13 @@ class MusicTracksController < ApplicationController
 
   def create
     @music_track = MusicTrack.new(params[:music_track])
-    @music_track.save
-    redirect_to @music_track
+    @music_track.user = current_user
+    if @music_track.valid?
+      @music_track.save
+      redirect_to @music_track
+    else
+      render :edit
+    end
   end
 
   def edit

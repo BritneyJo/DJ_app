@@ -7,9 +7,9 @@
   <li>Tracks: <% @user.music_tracks.each do |music_track| %>
 <%= link_to music_track.name, music_track %><% end %></li>
 </ul>
-<% if can? :update, @user %>
+<% if can? :update, @user and current_user.role == 'dj' %>
 <%= link_to 'Edit Profile', edit_user_path(@user) %> |
 <%= link_to 'Delete Profile', @user, method: :delete, data: { confirm: 'Are you sure?' } %> |
-<%= link_to 'Add Tracks', new_music_track_path(@user) %> |
+<%= link_to 'Add Tracks', new_music_track_path %> |
 <% end %>
 <%= link_to 'All DJs', users_path %>

@@ -25,6 +25,14 @@
   <%= f.text_area :description, size: "15x5" %>
 </div>
 
+<div class = "field">
+  <%if can? :manage, @music_track and current_user.role== "admin" %>
+    <%= f.label :user_id, 'DJ:' %>
+    <%= f.select(:user_id, User.not_admin_users.collect {|p| [ p.name, p.id ] }, { include_blank: true }) %>
+  <% end %>
+</div>
+
+
 <div >
   <%= f.label :track_file, 'Music File:' %>
   <%= f.file_field :track_file%>

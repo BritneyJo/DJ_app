@@ -16,6 +16,9 @@
       <li>  <%= link_to 'DJs', users_path %></li>
       <li><%= link_to 'Tracks', music_tracks_path %></li>
       <li><%= link_to 'Genres', genres_path %></li>
+      <%if current_user and current_user.role == "dj" %>
+        <li><%= link_to 'Add a new track', new_music_track_path %></li>
+      <% end %>
       </ul>
     <ul class="nav pull-right">
       <li><% if current_user %>

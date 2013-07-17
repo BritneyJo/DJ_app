@@ -6,6 +6,7 @@ class Ability
     if user.role? 'dj'
       can :read, :all
       can :create, Comment
+      can :manage, MusicTrack
       can :destroy, Comment do |c|
           (c.music_track.user.id == user.id if (c.music_track and c.music_track.user))# || c.user.id == user.id
       end

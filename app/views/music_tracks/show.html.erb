@@ -3,7 +3,7 @@
   <li>Track Title: <%= @music_track.name %></li>
   <li>Release Date: <%= @music_track.release_date %></li>
   <li>About: <%= @music_track.description %></li>
-  <li>DJ: <%= @music_track.user[:name] %></li>
+  <li>DJ: <%= @music_track.user.name if @music_track.user %></li>
   <li>Genres: <%= @music_track.genres.map { |x| x.name }.to_sentence %> </li>
   <li>Play: <%= @music_track.track_file %></li>
 </ul>
@@ -28,5 +28,6 @@ Your browser does not support the audio element.
 <% if can? :update, @music_track.user %>
 <%= link_to 'Edit Track', edit_music_track_path(@music_track) %> |
 <%= link_to 'Delete Track', @music_track, method: :delete, data: { confirm: 'Are you sure?' } %> |
+<%= link_to 'Add Track', new_music_track_path(@music_track.user) %> |
 <% end %>
 <%= link_to 'All Tracks', music_tracks_path %>
