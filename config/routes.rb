@@ -9,6 +9,7 @@ DJApp::Application.routes.draw do
 
 
   get '/logout', to: 'sessions#destroy'
+  get '/login', to: 'sessions#new'
 
   root to: 'home#home'
 

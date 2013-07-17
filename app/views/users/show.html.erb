@@ -3,14 +3,16 @@
   <li>DJ: <%= @user.name %></li>
   <li>Location: <%= @user.location %></li>
   <li>Bio: <%= @user.bio %></li>
-  <li><%= image_tag @user.avatar_image %></li>
+  <li><%= image_tag @user.avatar_image.detail.url if @user.avatar_image %></li>
   <li>Tracks: <br>
     <% @user.music_tracks.each do |music_track| %>
     <%= link_to music_track.name, music_track %><br>
     <% end %></li>
 </ul>
-<% if can? :update, @user and current_user.role == 'dj' %>
+<% if can? :update, @user and current_user.role == 'dj' || 'admin' %>
 <%= link_to 'Edit Profile', edit_user_path(@user) %> |
+<% end %>
+<% if can? :update, @user and current_user.role == 'dj' %>
 <%= link_to 'Delete Profile', @user, method: :delete, data: { confirm: 'Are you sure?' } %> |
 <%= link_to 'Add Tracks', new_music_track_path %> |
 <% end %>

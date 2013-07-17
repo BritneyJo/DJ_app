@@ -15,15 +15,33 @@
       <li><%= link_to 'Home', root_path %></li>
       <li>  <%= link_to 'DJs', users_path %></li>
       <li><%= link_to 'Tracks', music_tracks_path %></li>
-      <li><%= link_to 'Genres', genres_path %></li>
+
+              <li class="dropdown">
+                <a class="dropdown-toggle"
+                   data-toggle="dropdown"
+                   href="#">
+                    Genres
+                    <b class="caret"></b>
+                  </a>
+                <ul class="dropdown-menu">
+                  <% @genres.each do |genre| %>
+                  <li><%= link_to genre.name, genre %></li>
+                  <% end %>
+                </ul>
+              </li>
+
       <%if current_user and current_user.role == "dj" %>
+        <li><%= link_to 'My Profile', user_path(current_user.id) %></li>
         <li><%= link_to 'Add New Track', new_music_track_path %></li>
       <% end %>
       </ul>
     <ul class="nav pull-right">
       <li><% if current_user %>
         <%= link_to "Log Out, #{current_user.name}!" , logout_path %>
-        <% end %></li>
+        <% else %>
+        <%= link_to 'Log In', login_path %>
+        <% end %>
+      </li>
     </ul>
   </div>
 </div>

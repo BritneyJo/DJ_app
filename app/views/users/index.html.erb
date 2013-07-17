@@ -4,6 +4,7 @@
 
 <% @users.each do |user| %>
   <ul>
+    <li><%= image_tag user.avatar_image.thumb.url %></li>
     <li><%= link_to user.name, user %></li>
   </ul>
 <% end %>
