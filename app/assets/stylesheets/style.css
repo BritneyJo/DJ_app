@@ -1,3 +1,20 @@
+
+body{
+    font-family: 'Open Sans', sans-serif;
+}
+
+.container {
+  width: 940px;
+  background-color: #fff;
+  margin: auto;
+}
+a {
+  color: #399179;
+}
+a:hover {
+  color: #c1c30a;
+  text-decoration: none;
+}
 .track_comments{
   list-style-type: none;
   margin: 0;
@@ -9,5 +26,27 @@
   padding: 10px;
   border-radius: 7px;
   border: black 1px solid;
-
 }
+
+.thumbnail {
+  text-align: center;
+  border: 2px solid #000;
+  border-radius: 0px;
+}
+
+.navbar-inverse .nav li {
+  text-transform:uppercase;
+}
+
+.navbar-inverse .nav li a{
+  color: #399179;
+}
+
+.navbar-inverse .nav li a:hover,
+.navbar-inverse .nav li a:focus{
+  color: #c1c30a;
+}
+
+
+
+

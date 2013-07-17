@@ -22,7 +22,9 @@ Your browser does not support the audio element.
         <%if can? :destroy, comment %>
           <%=link_to 'delete', music_track_comment_path(@music_track, comment.id), method: :delete, data: { confirm: 'Are you sure?' } %>
         <% end %>
-          <%= comment.description %></li>
+          <%= comment.description %><br>
+          <%= comment.user.name %>
+          <%= comment.created_at.strftime('%a %m %y') %></li>
 <% end %>
 </ul>
 

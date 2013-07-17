@@ -33,7 +33,7 @@ include CarrierWave::RMagick
 
   # Create different versions of your uploaded files:
   version :thumb do
-    process :resize_to_fill => [100, 100]
+    process :resize_to_fill => [180, 120]
   end
 
   version :detail do

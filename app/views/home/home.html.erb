@@ -3,4 +3,8 @@
  <div>
   <%= render partial: "login" unless current_user %>
 
+  <% random_user = User.not_admin_users.order('random()').first %>
+
+  <%= link_to image_tag(random_user.avatar_image.url), random_user %>
+
 </div>
