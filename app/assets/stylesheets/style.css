@@ -4,13 +4,36 @@ body{
 }
 
 .container {
-  width: 940px;
+  width: 80em;
   background-color: #fff;
   margin: auto;
 }
+
+.page-wrap{
+  width: 60em;
+}
+
+.info-wrap{
+  margin: 0 auto;
+  width: 40em;
+}
+
+ .home_img img{
+  display: block;
+  margin: 0 auto;
+ }
+
+.login{
+  width: 220px;
+  padding: 10px;
+  border: 1px solid #000;
+  background-color: #e5e9f2 ;
+}
+
 a {
   color: #399179;
 }
+
 a:hover {
   color: #c1c30a;
   text-decoration: none;
@@ -28,12 +51,94 @@ a:hover {
   border: black 1px solid;
 }
 
+.thumbnail_container{
+  width: 70em;
+  margin: 0 auto;
+}
+
 .thumbnail {
   text-align: center;
-  border: 2px solid #000;
+  background-color: #000;
+  border: 0px;
   border-radius: 0px;
 }
 
+.thumbnail img {
+  margin-top: 12px;
+}
+
+.thumbnail p{
+  text-transform: uppercase;
+  color: #e5e9f2;
+  margin-bottom: 6px;
+  font-weight: 100;
+}
+
+.thumbnail h3{
+  text-transform: uppercase;
+  font-size: 22px;
+  margin: 0px;
+  line-height: 35px;
+  font-weight: 100;
+}
+
+.dj_tracks{
+    width: 40em;
+    display: block; margin: 0 auto;
+    margin-top : 1em;
+}
+
+.dj_name {
+  display: inline-block;
+  position: absolute;
+  right: 15em;
+  bottom: 5em;
+  z-index: 100;
+  text-align: left;
+}
+
+.dj_info{
+  display: inline-block;
+  width: 20em;
+}
+
+.name h2{
+  text-transform: uppercase;
+  font-size: 60px;
+  text-align: center;
+  letter-spacing:4px;
+  line-height: 80px;
+}
+
+.violet{
+  color: #8435A1;
+}
+.pink{
+  color: #E31497;
+}
+.orange{
+  color: #FF5E08;
+}
+.dark_green {
+  color: #107026;
+}
+.lime_green{
+  color: #52FF54;
+}
+.turquoise{
+  color: #21EDE0;
+}
+.dark_blue{
+  color: #104DDE;
+}
+.black{
+  color: #fff;
+}
+
+.dj_pic{
+  float: left;
+  padding-right: 15px;
+}
 .navbar-inverse .nav li {
   text-transform:uppercase;
 }
@@ -43,10 +148,14 @@ a:hover {
 }
 
 .navbar-inverse .nav li a:hover,
-.navbar-inverse .nav li a:focus{
+.navbar-inverse .nav li a:focus {
   color: #c1c30a;
 }
 
-
-
-
+.dropdown-menu{
+  border-radius: 0px;
+}
+.dropdown-menu li a:hover,
+.dropdown-menu li a:focus{
+  background: black;
+}

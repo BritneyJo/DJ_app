@@ -1,10 +1,14 @@
  <h1>DECKED</h1>
 
- <div>
+
   <%= render partial: "login" unless current_user %>
 
+<div class="home">
   <% random_user = User.not_admin_users.order('random()').first %>
-
-  <%= link_to image_tag(random_user.avatar_image.url), random_user %>
+  <%= link_to image_tag(random_user.avatar_image.main.url), random_user, class: "home_img" %>
+  <div class="dj_name">
+    <h3><%= random_user.name %></h3>
+  </div>
 
 </div>
+
