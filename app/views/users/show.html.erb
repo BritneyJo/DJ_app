@@ -1,29 +1,30 @@
-
+<% content_for :background do %>background:url(<%= asset_path('purple-people.jpg') %>);<% end %>
 
  <div class="span8 page-wrap offset1">
-  <div class= "name">
+  <div class="name">
     <h2 class=<%= @user.title_color%>><%= @user.name %></h2>
   </div>
+
 <div class="clearfix info-wrap">
-<div class="dj_pic">
-  <%= image_tag @user.avatar_image.detail.url if @user.avatar_image %>
+  <div class="dj_pic">
+    <%= image_tag @user.avatar_image.detail.url if @user.avatar_image %>
+  </div>
+
+  <div class="dj_info">
+      <h3>Location: </h3><%= @user.location %><br>
+      <h3>Bio: </h3><%= @user.bio %>
+  </div>
 </div>
 
-<div class="dj_info">
-Location: <%= @user.location %>
-Bio: <%= @user.bio %>
-</div>
-</div>
-
-  <div class="dj_tracks">
-      <ul>
-          <li>Tracks: <br>
+  <div class="dj_tracks_container">
+      <ul class="dj_tracks">
+          <li><h3>Tracks</h3>
           <% @user.music_tracks.each do |music_track| %>
           <%= link_to music_track.name, music_track %><br>
           <% end %></li>
     </ul>
   </div>
-
+<div class="edit_controls">
 <% if can? :update, @user and current_user.role == 'dj' || 'admin' %>
 <%= link_to 'Edit Profile', edit_user_path(@user) %> |
 <% end %>
@@ -33,3 +34,5 @@ Bio: <%= @user.bio %>
 <% end %>
 <%= link_to 'All DJs', users_path %>
 </div>
+</div>
+

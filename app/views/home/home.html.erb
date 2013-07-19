@@ -1,14 +1,6 @@
- <h1>DECKED</h1>
-
-
-  <%= render partial: "login" unless current_user %>
+ <h1>MYBASS</h1>
 
 <div class="home">
   <% random_user = User.not_admin_users.order('random()').first %>
   <%= link_to image_tag(random_user.avatar_image.main.url), random_user, class: "home_img" %>
-  <div class="dj_name">
-    <h3><%= random_user.name %></h3>
-  </div>
-
 </div>
-

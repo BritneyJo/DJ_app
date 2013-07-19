@@ -1,18 +1,18 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>DECKED</title>
+  <title>MYBASS</title>
   <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300' rel='stylesheet' type='text/css'>
   <%= stylesheet_link_tag    "application", :media => "all" %>
   <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
 
 </head>
-<body>
+<body style="<%= content_for :background %>">
 <div class="navbar  navbar-static-top navbar-inverse">
   <div class="navbar-inner">
     <ul class="nav">
-      <li><%= link_to 'Decked', root_path %></li>
+      <li><%= link_to 'MyBass', root_path %></li>
       <li>  <%= link_to 'DJs', users_path %></li>
       <li><%= link_to 'Tracks', music_tracks_path %></li>
 
@@ -49,5 +49,9 @@
 <div class="container">
   <%= yield %>
 </div>
+
 </body>
+<footer>
+  <p>All works © MYBASS 2013. Please do not reproduce without the expressed written consent of MYBASS. </p>
+  </footer>
 </html>

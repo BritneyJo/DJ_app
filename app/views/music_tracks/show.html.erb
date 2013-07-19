@@ -1,11 +1,11 @@
+<div class="music_control">
+    <h3><%= @music_track.name %></h3>
 
 <ul>
-  <li>Track Title: <%= @music_track.name %></li>
-  <li>Release Date: <%= @music_track.release_date %></li>
   <li>About: <%= @music_track.description %></li>
+  <li>Release Date: <%= @music_track.release_date %></li>
   <li>DJ: <%= link_to @music_track.user.name, user_path(@music_track.user) if @music_track.user %></li>
   <li>Genres: <%= @music_track.genres.map { |x| x.name }.to_sentence %> </li>
-  <li>Play: <%= @music_track.track_file %></li>
 </ul>
 
 <audio controls>
@@ -13,9 +13,11 @@
   <source src= <%= @music_track.track_file %> type="audio/mpeg">
 Your browser does not support the audio element.
 </audio>
+ </div>
 
-<%= render partial: 'comments/form' if can? :create, @comment %>
+<div class="comments_container">
 
+<h3> Comments: </h3>
 <ul class="track_comments">
 <% @music_track.comments.each do |comment| %>
     <li>
@@ -26,10 +28,13 @@ Your browser does not support the audio element.
           <%= comment.user.name %> on <%= comment.created_at.strftime('%c') %></li>
 <% end %>
 </ul>
-
+<%= render partial: 'comments/form' if can? :create, @comment %>
+</div>
+<div class="edit_controls">
 <% if can? :update, @music_track.user %>
 <%= link_to 'Edit Track', edit_music_track_path(@music_track) %> |
 <%= link_to 'Delete Track', @music_track, method: :delete, data: { confirm: 'Are you sure?' } %> |
 <%= link_to 'Add Track', new_music_track_path(@music_track.user) %> |
 <% end %>
 <%= link_to 'All Tracks', music_tracks_path %>
+</div>

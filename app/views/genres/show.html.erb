@@ -1,11 +1,11 @@
-<p>
-  <b>Genre:</b>
+<h1 class="genre">
   <%= @genre.name %>
-</p>
+</h1>
 
-<p>
-  <b>Tracks:</b><br>
+<div class="list_specific_music">
+<h3>Tracks:</h3>
 <% @genre.music_tracks.each do |music_track| %>
 <%= link_to music_track.name, music_track %><br>
 <% end %>
 </p>
+</div>

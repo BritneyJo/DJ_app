@@ -1,11 +1,12 @@
+
 <%= form_for [@music_track, @comment] do |f| %>
 
 
 
 
 <div class="field">
-  <%= f.label :description, 'Leave a Comment:' %>
-  <%= f.text_area :description, :autofocus => true, size: "30x5" %>
+  <h3><%= f.label :description, 'Leave a Comment:' %></h3>
+  <%= f.text_area :description, :autofocus => true, size: "100x2" %>
 </div>
 
 <div class="actions">

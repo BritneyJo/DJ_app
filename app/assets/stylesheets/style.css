@@ -1,21 +1,31 @@
 
 body{
     font-family: 'Open Sans', sans-serif;
+    padding-bottom: 50px;
+    height: 100%;
 }
 
 .container {
-  width: 80em;
-  background-color: #fff;
+  width: 70em;
   margin: auto;
 }
-
+h3{
+  text-transform: uppercase;
+}
 .page-wrap{
   width: 60em;
+  background: #e5e9f2;
+  margin-top: 20px;
+  opacity:0.85;
 }
 
 .info-wrap{
   margin: 0 auto;
-  width: 40em;
+  width: 50em;
+  padding-bottom: 30px;
+  padding-top: 30px;
+  border-bottom: 2px solid #399179;
+  border-top: 2px solid #399179;
 }
 
  .home_img img{
@@ -26,10 +36,16 @@ body{
 .login{
   width: 220px;
   padding: 10px;
-  border: 1px solid #000;
   background-color: #e5e9f2 ;
+  margin-top: 20px;
+}
+.login h2{
+  text-transform: uppercase;
 }
 
+.field input{
+  border-radius: 0px;
+}
 a {
   color: #399179;
 }
@@ -37,18 +53,6 @@ a {
 a:hover {
   color: #c1c30a;
   text-decoration: none;
-}
-.track_comments{
-  list-style-type: none;
-  margin: 0;
-}
-
-.track_comments li{
-  background-color: silver;
-  margin: 10px 0;
-  padding: 10px;
-  border-radius: 7px;
-  border: black 1px solid;
 }
 
 .thumbnail_container{
@@ -58,56 +62,74 @@ a:hover {
 
 .thumbnail {
   text-align: center;
-  background-color: #000;
+  background-color: #e5e9f2;
   border: 0px;
   border-radius: 0px;
+  margin-left: 0px;
 }
 
+.thumbnails {
+  margin: 0 auto;
+  width: 63em;
+}
+
+.thumbnails li {
+  margin: 10px 10px 10px 10px;
+}
 .thumbnail img {
   margin-top: 12px;
 }
 
 .thumbnail p{
   text-transform: uppercase;
-  color: #e5e9f2;
+  color: #000;
   margin-bottom: 6px;
-  font-weight: 100;
 }
 
 .thumbnail h3{
-  text-transform: uppercase;
   font-size: 22px;
   margin: 0px;
   line-height: 35px;
-  font-weight: 100;
+
 }
 
-.dj_tracks{
+.dj_tracks_container{
     width: 40em;
     display: block; margin: 0 auto;
     margin-top : 1em;
 }
-
-.dj_name {
-  display: inline-block;
-  position: absolute;
-  right: 15em;
-  bottom: 5em;
-  z-index: 100;
-  text-align: left;
+.dj_tracks{
+  text-align: center;
+  list-style-type: none;
+  padding: 0;
+  margin: 0 0 20px 0px;
+}
+.dj_tracks h3{
+  line-height: 30px;
+}
+.edit_controls{
+text-align: right;
+margin-bottom: 5px;
+margin-right: 10px;
 }
 
 .dj_info{
   display: inline-block;
-  width: 20em;
+  width: 30em;
 }
-
+.dj_info h3{
+font-size: 16px;
+line-height: 20px;
+margin-bottom: 0px;
+}
 .name h2{
   text-transform: uppercase;
-  font-size: 60px;
+  font-size: 70px;
   text-align: center;
   letter-spacing:4px;
   line-height: 80px;
+  margin-bottom: 20px;
+  text-shadow: 1px 1px 2px #7A7A7A;
 }
 
 .violet{
@@ -132,12 +154,23 @@ a:hover {
   color: #104DDE;
 }
 .black{
-  color: #fff;
+  color: #000;
+}
+
+.dj_background{
+  position: absolute;
+  z-index: -1;
+   background: url(images/bg.jpg) no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
 }
 
 .dj_pic{
   float: left;
   padding-right: 15px;
+  padding-left: 30px;
 }
 .navbar-inverse .nav li {
   text-transform:uppercase;
@@ -158,4 +191,89 @@ a:hover {
 .dropdown-menu li a:hover,
 .dropdown-menu li a:focus{
   background: black;
+}
+
+.list_music{
+  width: 60em;
+  padding: 10px;
+  padding-top: 5px;
+  background-color: #e5e9f2;
+  margin: 0 auto;
+  margin-top: 20px;
+}
+
+.list_specific_music{
+  width: 40em;
+  padding: 10px;
+  background-color: #e5e9f2;
+  margin-top: 20px;
+  margin-left: 50px;
+}
+.list_specific_music h3{
+  margin-top: 0px;
+  margin-bottom: 0px;
+}
+.list_specific_music a{
+  font-size: 16px;
+  padding-left: 8px;
+}
+
+.music_control{
+  width: 50em;
+  padding: 10px;
+  padding-top: 5px;
+  background-color: #e5e9f2;
+  margin: 0 auto;
+  margin-top: 20px;
+}
+.music_control h3{
+  margin-top: 0px;
+}
+.comments_container{
+  margin-left: 155px;
+}
+.comments_container h3{
+  font-size: 15px;
+  line-height: 20px;
+  margin-top: 20px;
+}
+.track_comments{
+  list-style-type: none;
+  margin: 0;
+}
+
+.track_comments li{
+  width: 40em;
+  background-color: #e5e9f2;
+  margin: 10px 0;
+  padding: 10px;
+}
+.music{
+  text-transform: uppercase;
+}
+.genre{
+  text-transform: uppercase;
+}
+dl{
+  margin-bottom: 0px;
+  margin-top: 0px;
+}
+dt{
+  margin-left: 5px;
+  margin-top: 10px;
+  font-size: 16px;
+  text-transform: uppercase;
+}
+dd{
+  margin-left: 15px;
+}
+footer {
+  width: 100%;
+  bottom: 0;
+  margin: 0 auto;
+  height: 20px;
+  position: fixed;
+}
+footer p{
+  text-align: center;
 }
