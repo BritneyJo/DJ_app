@@ -16,8 +16,12 @@ Your browser does not support the audio element.
  </div>
 
 <div class="comments_container">
-
 <h3> Comments: </h3>
+<%if current_user %>
+
+<% else %>
+<p> Please <%= link_to 'log in', login_path %> to leave a comment </p>
+<% end %>
 <ul class="track_comments">
 <% @music_track.comments.each do |comment| %>
     <li>

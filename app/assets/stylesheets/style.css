@@ -236,6 +236,10 @@ margin-bottom: 0px;
   font-size: 15px;
   line-height: 20px;
   margin-top: 20px;
+  margin-bottom: 0px;
+}
+.comments_container p{
+  font-size: 10px;
 }
 .track_comments{
   list-style-type: none;
