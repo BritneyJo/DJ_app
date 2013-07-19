@@ -27,9 +27,10 @@
 <div class="edit_controls">
 <% if can? :update, @user and current_user.role == 'dj' || 'admin' %>
 <%= link_to 'Edit Profile', edit_user_path(@user) %> |
-<% end %>
-<% if can? :update, @user and current_user.role == 'dj' %>
 <%= link_to 'Delete Profile', @user, method: :delete, data: { confirm: 'Are you sure?' } %> |
+<% end %>
+
+<% if can? :update, @user and current_user.role == 'dj' %>
 <%= link_to 'Add Tracks', new_music_track_path %> |
 <% end %>
 <%= link_to 'All DJs', users_path %>

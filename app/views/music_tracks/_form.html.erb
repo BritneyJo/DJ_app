@@ -17,7 +17,7 @@
 
 <div class="field">
   <%= f.label :release_date, 'Release Date:' %>
-  <%= f.date_select :release_date %>
+  <%= f.date_select :release_date, start_year: (Time.now.year - 100), end_year: (Time.now.year + 5)  %>
 </div>
 
 <div class="field">
