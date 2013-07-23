@@ -12,6 +12,7 @@ gem 'carrierwave'
 gem 'rmagick'
 gem 'ransack'
 gem 'nested_form'
+gem "fog", "~> 1.3.1"
 
 group :assets do
   gem 'sass-rails',   '~> 3.2.3'
