@@ -16,14 +16,20 @@
   </div>
 </div>
 
-  <div class="dj_tracks_container">
-      <ul class="dj_tracks">
-          <li><h3>Tracks</h3>
-          <% @user.music_tracks.each do |music_track| %>
-          <%= link_to music_track.name, music_track %><br>
-          <% end %></li>
+<div class="dj_tracks_container">
+  <h3>Tracks</h3>
+  <% if @user.music_tracks.size > 0 %>
+    <ul class="dj_tracks">
+      <% @user.music_tracks.each do |music_track| %>
+        <li><%= link_to music_track.name, music_track %></li>
+      <% end %>
     </ul>
-  </div>
+  <% else %>
+    <p>No tracks yet!</p>
+  <% end %>
+</div>
+
+
 <div class="edit_controls">
 <% if can? :update, @user and current_user.role == 'dj' || 'admin' %>
 <%= link_to 'Edit Profile', edit_user_path(@user) %> |

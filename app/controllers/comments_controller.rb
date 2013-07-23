@@ -13,7 +13,4 @@ class CommentsController < ApplicationController
     @comment.destroy
     redirect_to music_track_path(params[:music_track_id])
   end
-
-
 end
-
