@@ -1,3 +1,6 @@
+/* VARIABLES */
+$purple_primary: #e5e9f2;
+
 
 body{
     font-family: 'Open Sans', sans-serif;
@@ -5,16 +8,16 @@ body{
     height: 100%;
 }
 
-.container {
-  width: 70em;
-  margin: auto;
-}
+
+// .container {
+//   margin: auto;
+// }
 h3{
   text-transform: uppercase;
 }
 .page-wrap{
   width: 60em;
-  background: #e5e9f2;
+  background: $purple_primary;
   margin-top: 20px;
   opacity:0.85;
 }
@@ -36,7 +39,7 @@ h3{
 .login{
   width: 220px;
   padding: 10px;
-  background-color: #e5e9f2 ;
+  background-color: $purple_primary;
   margin-top: 20px;
 }
 .login h2{
@@ -62,7 +65,7 @@ a:hover {
 
 .thumbnail {
   text-align: center;
-  background-color: #e5e9f2;
+  background-color:$purple_primary;
   border: 0px;
   border-radius: 0px;
   margin-left: 0px;
@@ -197,7 +200,7 @@ margin-bottom: 0px;
   width: 60em;
   padding: 10px;
   padding-top: 5px;
-  background-color: #e5e9f2;
+  background-color: $purple_primary;
   margin: 0 auto;
   margin-top: 20px;
 }
@@ -205,7 +208,7 @@ margin-bottom: 0px;
 .list_specific_music{
   width: 40em;
   padding: 10px;
-  background-color: #e5e9f2;
+  background-color: $purple_primary;
   margin-top: 20px;
   margin-left: 50px;
 }
@@ -222,7 +225,7 @@ margin-bottom: 0px;
   width: 50em;
   padding: 10px;
   padding-top: 5px;
-  background-color: #e5e9f2;
+  background-color: $purple_primary;
   margin: 0 auto;
   margin-top: 20px;
 }
@@ -248,7 +251,7 @@ margin-bottom: 0px;
 
 .track_comments li{
   width: 40em;
-  background-color: #e5e9f2;
+  background-color: $purple_primary;
   margin: 10px 0;
   padding: 10px;
 }
@@ -280,4 +283,12 @@ footer {
 }
 footer p{
   text-align: center;
+}
+
+.user-row div {
+  background: $purple_primary;
+  min-height: 200px;
+  text-align: center;
+  margin-bottom: 20px;
+  padding-top: 20px;
 }

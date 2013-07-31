@@ -1,17 +1,13 @@
 <h1>DJ's</h1>
 
-<div class="thumbnail_container">
-
-<ul class="thumbnails">
-  <% @users.each do |user| %>
-    <li class="span3">
-      <div class="thumbnail">
+<% @users.each_slice(4) do |users| %>
+  <div class="row user-row">
+    <% users.each do |user| %>
+      <div class="span3">
         <%= image_tag user.avatar_image.thumb.url %>
         <h3><%= link_to user.name, user %></h3>
         <p><%= user.location %></p>
       </div>
-    </li>
-  <% end %>
-</ul>
-
-</div>
+    <% end %>
+  </div>
+<% end %>
